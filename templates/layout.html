@@ -11,12 +11,24 @@
 </head>
 
 <body>
+    <header class="header">
+        <div class="container">
+            <h1>Site Title</h1>
+            <!-- Additional header content -->
+        </div>
+    </header>
     <button id="sidebar-toggle">Toggle</button>
     {{ render_sidebar() }}
     <div id="content">
         {% block content %}
         {% endblock %}
     </div>
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2023 Site Name. All rights reserved.</p>
+            <!-- Additional footer content -->
+        </div>
+    </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="{{ url_for('static', filename='js/sidebar.js') }}"></script>
 </body>

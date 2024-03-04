@@ -53,6 +53,13 @@
     /* Indicates that the element is clickable */
     transition: background-color 0.3s ease;
     /* Smooth background color transition */
+    background-image: url('/static/img/4bf6f23d-f89f-4287-9828-974743a1a02c.webp');
+    width: 48px;
+    /* Задать ширину */
+    height: 48px;
+    /* Задать высоту */
+    background-size: contain;
+    /* Убедиться, что иконка помещается */
 }
 
 #sidebar-toggle:hover {
