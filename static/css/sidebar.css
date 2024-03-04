@@ -25,14 +25,14 @@
 }
 
 #sidebar ul li a {
+    display: flex;
+    flex-direction: column;
     color: #ddd;
     text-decoration: none;
     display: block;
 }
 
 #sidebar-toggle {
-    position: absolute;
-    /* Changed from background-color to position */
     top: 10px;
     /* Adjust the top position as needed */
     left: 10px;
@@ -41,7 +41,7 @@
     border: none;
     color: white;
     padding: 10px;
-    width: calc(100% - 20px);
+    width: auto;
     /* Adjust the width to account for padding */
     text-align: left;
     z-index: 2;
