@@ -31,12 +31,21 @@
 }
 
 #sidebar-toggle {
+    position: absolute;
+    /* Changed from background-color to position */
+    top: 10px;
+    /* Adjust the top position as needed */
+    left: 10px;
+    /* Adjust the left position as needed */
     background-color: #444;
     border: none;
     color: white;
     padding: 10px;
-    width: 100%;
+    width: calc(100% - 20px);
+    /* Adjust the width to account for padding */
     text-align: left;
+    z-index: 2;
+    /* Ensure the button is above other content */
 }
 
 @media (max-width: 768px) {
