@@ -8,6 +8,11 @@
     background: #333;
     color: #fff;
     transition: left 0.3s ease;
+
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    /* Add shadow for depth */
+    z-index: 2;
+    /* Ensure sidebar is above content but below toggle button */
 }
 
 #sidebar.active {
@@ -30,6 +35,7 @@
     color: #ddd;
     text-decoration: none;
     display: block;
+
 }
 
 #sidebar-toggle {

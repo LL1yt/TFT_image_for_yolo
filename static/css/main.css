@@ -9,9 +9,12 @@ body,
 html {
     margin: 0;
     padding: 0;
-    font-family: 'Arial', sans-serif;
     color: var(--text-color);
     background-color: var(--background-color);
+    font-family: 'Open Sans', sans-serif;
+    /* A more modern font */
+    line-height: 1.6;
+    /* Improve readability */
 }
 
 .header {
@@ -21,6 +24,11 @@ html {
     text-align: center;
 }
 
+#content {
+    transition: margin-left 0.3s ease;
+    /* Smooth transition for content area */
+    /* ... existing styles ... */
+}
 
 #content.active {
     margin-left: 250px;
@@ -30,4 +38,10 @@ html {
     #content.active {
         margin-left: 0;
     }
+}
+
+.container {
+    /* ... existing styles ... */
+    padding: 20px;
+    /* Consistent spacing */
 }
