@@ -2,7 +2,8 @@
     --primary-color: #007bff;
     --text-color: #333;
     --background-color: #f4f4f4;
-    --sidebar-width: 250px;
+    --sidebar-width: 40px;
+    --sidebar-width-active: 250px;
 }
 
 body,
@@ -17,31 +18,57 @@ html {
     /* Improve readability */
 }
 
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
 .header {
     background-color: var(--primary-color);
     color: #ffffff;
-    padding: 20px 0;
+    padding: 1rem 0;
     text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 #content {
     transition: margin-left 0.3s ease;
-    /* Smooth transition for content area */
-    /* ... existing styles ... */
+    flex: 1;
+    padding: 1rem;
+    margin-left: var(--sidebar-width);
+    /* Adjust based on sidebar visibility */
 }
 
 #content.active {
-    margin-left: 250px;
+    margin-left: var(--sidebar-width-active);
 }
 
-@media (max-width: 768px) {
-    #content.active {
-        margin-left: 0;
-    }
-}
 
 .container {
     /* ... existing styles ... */
     padding: 20px;
     /* Consistent spacing */
+}
+
+.footer {
+    background-color: #333;
+    color: #ffffff;
+    padding: 1rem 0;
+    text-align: center;
+    font-size: 0.8rem;
+}
+
+button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: darken(var(--primary-color), 10%);
 }
