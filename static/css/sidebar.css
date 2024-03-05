@@ -1,8 +1,10 @@
 /* Basic styling for the sidebar */
 #sidebar {
 
-    background: #2c3e50;
-    color: #ecf0f1;
+    display: flex;
+    flex-direction: column;
+    background: #112D4E;
+    color: #4D9DE0;
     width: var(--sidebar-width);
     position: fixed;
     left: 0;
@@ -30,40 +32,41 @@
 }
 
 #sidebar ul li a {
-    color: #ecf0f1;
+    color: #4D9DE0;
     padding: 0.5rem 1rem;
     display: block;
     transition: background-color 0.3s ease;
 }
 
 #sidebar ul li a:hover {
-    background-color: #34495e;
+    background-color: #335C67;
 }
 
 #sidebar-toggle {
-    position: fixed;
     top: 0px;
     left: 0px;
-    background-color: var(--primary-color);
+    background-color: #112D4E;
     border: none;
-    color: white;
+    color: #4D9DE0;
     z-index: 3;
-    border-radius: 5px;
     /* Rounded corners for a modern look */
     cursor: pointer;
     /* Indicates that the element is clickable */
     transition: background-color 0.3s ease;
     /* Smooth background color transition */
-    background-image: url('/static/img/42a27431-3689-4c0d-92c2-24f8402d907d.webp');
-    width: 40px;
+    background-image: url('/static/img/side-menu.png');
+    width: 100%;
+    /* Full width of the sidebar */
     /* Задать ширину */
     height: 40px;
     /* Задать высоту */
     background-size: contain;
     /* Убедиться, что иконка помещается */
+    order: -1;
+    /* Ensure the toggle button is always the first item */
 }
 
 #sidebar-toggle:hover {
-    background-color: darken(var(--primary-color), 10%);
+    background-color: #4D9DE0;
     /* Slightly darken button on hover */
 }

@@ -1,7 +1,7 @@
 :root {
     --primary-color: #007bff;
-    --text-color: #333;
-    --background-color: #f4f4f4;
+    --text-color: #E0E6E9;
+    --background-color: #0A0F0D;
     --sidebar-width: 40px;
     --sidebar-width-active: 250px;
 }
@@ -25,8 +25,8 @@ body {
 }
 
 .header {
-    background-color: var(--primary-color);
-    color: #ffffff;
+    background-color: #163A5F;
+    color: #E0E6E9;
     padding: 1rem 0;
     text-align: center;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -52,23 +52,9 @@ body {
 }
 
 .footer {
-    background-color: #333;
-    color: #ffffff;
+    background-color: #163A5F;
+    color: #E0E6E9;
     padding: 1rem 0;
     text-align: center;
     font-size: 0.8rem;
-}
-
-button {
-    background-color: var(--primary-color);
-    color: white;
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 0.25rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-button:hover {
-    background-color: darken(var(--primary-color), 10%);
 }
