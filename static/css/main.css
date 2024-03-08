@@ -53,7 +53,8 @@ body.dark{
     padding: 10px 14px;
     background: var(--sidebar-color);
     transition: var(--tran-05);
-    z-index: 100;  
+    z-index: 100;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
 }
 .sidebar.close{
     width: 88px;
@@ -133,7 +134,7 @@ header .image-text .profession{
 
 .sidebar header .image img{
     width: 40px;
-    border-radius: 6px;
+    border-radius: 4px;
 }
 
 .sidebar header .toggle{
