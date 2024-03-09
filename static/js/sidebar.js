@@ -20,11 +20,3 @@ modeSwitch.addEventListener("click", () => {
 
     }
 });
-document.querySelectorAll('.nav-link .arrow').forEach(arrow => {
-    arrow.addEventListener('click', () => {
-        const subMenu = arrow.nextElementSibling;
-        const navLink = arrow.parentElement.parentElement; // Получаем родительский элемент li
-        navLink.classList.toggle('show'); // Переключаем класс .show для родительского элемента li
-        arrow.classList.toggle('rotate');
-    });
-});

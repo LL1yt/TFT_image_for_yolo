@@ -308,33 +308,3 @@ body.dark .switch::before{
 body.dark .home .text{
     color: var(--text-color);
 }
-.sub-menu {
-    display: none;
-    list-style: none;
-    padding-left: 1rem;
-}
-.menu-links.show .sub-menu {
-    display: block;
-}
-
-.sub-menu .link_name {
-    display: none;
-}
-
-.nav-link .iocn-link {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.nav-link:hover .sub-menu {
-    display: block;
-}
-
-.arrow {
-    transition: transform 0.5s;
-}
-
-.nav-link .arrow {
-    transform: rotate(-180deg);
-}
