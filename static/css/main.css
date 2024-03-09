@@ -37,7 +37,7 @@ body{
 body.dark{
     --body-color: #02080d;
     --sidebar-color: #0a111c;
-    --primary-color: #123c5c;
+    --primary-color: #06259a;
     --primary-color-light: #1e3667;
     --toggle-color: #2ea3f2;
     --text-color: #2791ec;
@@ -104,6 +104,8 @@ body.dark{
 
 .sidebar header{
     position: relative;
+    padding-bottom: 20px;
+    border-bottom: 2px solid var(--primary-color); /* Здесь вы можете настроить толщину, стиль и цвет линии */
 }
 
 .sidebar header .image-text{
@@ -164,28 +166,9 @@ body.dark .sidebar header .toggle{
 }
 
 .sidebar .menu{
-    margin-top: 40px;
+    margin-top: 10px;
 }
 
-.sidebar li.search-box{
-    border-radius: 6px;
-    background-color: var(--primary-color-light);
-    cursor: pointer;
-    transition: var(--tran-05);
-}
-
-.sidebar li.search-box input{
-    height: 100%;
-    width: 100%;
-    outline: none;
-    border: none;
-    background-color: var(--primary-color-light);
-    color: var(--text-color);
-    border-radius: 6px;
-    font-size: 17px;
-    font-weight: 500;
-    transition: var(--tran-05);
-}
 .sidebar li a{
     list-style: none;
     height: 100%;
@@ -308,3 +291,4 @@ body.dark .switch::before{
 body.dark .home .text{
     color: var(--text-color);
 }
+
