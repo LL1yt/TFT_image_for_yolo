@@ -1,79 +1,87 @@
 {% macro render_sidebar() %}
 <nav class="sidebar close">
-    <header>
-        <div class="image-text">
-            <span class="image">
-                <img src="/static/img/e8621deb-23be-46c1-a123-5ad9866b7325.png" alt="">
-            </span>
-            <div class="text logo-text">
-                <span class="name">Explore AI</span>
-                <span class="profession">In the context of TFT</span>
-            </div>
-        </div>
-        <i class='bx bx-chevron-right toggle'></i>
-    </header>
-    <div class="menu-bar">
-        <div class="menu">
-            <ul class="menu-links">
-                <li class="nav-link has-submenu">
-                    <a href="#">
-                        <i class='bx bx-home-alt icon'></i>
-                        <span class="text nav-text">Dashboard</span>
-                        <i class='bx bxs-chevron-down icon'></i>
-                    </a>
-                    <!-- Подменю -->
-                    <ul class="submenu">
-                        <li><a href="#"><span class="text">Project 1</span></a></li>
-                        <li><a href="#"><span class="text">Project 2</span></a></li>
-                        <li><a href="#"><span class="text">Project 3</span></a></li>
-                    </ul>
-                </li>
-                <li class="nav-link">
-                    <a href="#">
-                        <i class='bx bx-bar-chart-alt-2 icon'></i>
-                        <span class="text nav-text">Revenue</span>
-                    </a>
-                </li>
-                <li class="nav-link">
-                    <a href="#">
-                        <i class='bx bx-bell icon'></i>
-                        <span class="text nav-text">Notifications</span>
-                    </a>
-                </li>
-                <li class="nav-link">
-                    <a href="#">
-                        <i class='bx bx-pie-chart-alt icon'></i>
-                        <span class="text nav-text">Analytics</span>
-                    </a>
-                </li>
-                <li class="nav-link">
-                    <a href="#">
-                        <i class='bx bx-heart icon'></i>
-                        <span class="text nav-text">Likes</span>
-                    </a>
-                </li>
-                <li class="nav-link">
-                    <a href="#">
-                        <i class='bx bx-wallet icon'></i>
-                        <span class="text nav-text">Wallets</span>
-                    </a>
-                </li>
-            </ul>
-        </div>
-        <div class="bottom-content">
-            <li class="mode">
-                <div class="sun-moon">
-                    <i class='bx bx-moon icon moon'></i>
-                    <i class='bx bx-sun icon sun'></i>
-                </div>
-                <span class="mode-text text">Light mode</span>
-                <div class="toggle-switch">
-                    <span class="switch"></span>
-                </div>
-            </li>
-
-        </div>
+  <header>
+    <div class="image-text">
+      <span class="image">
+        <img
+          src="/static/img/e8621deb-23be-46c1-a123-5ad9866b7325.png"
+          alt=""
+        />
+      </span>
+      <div class="text logo-text">
+        <span class="name">Explore AI</span>
+        <span class="profession">In the context of TFT</span>
+      </div>
     </div>
+    <i class="bx bx-chevron-right toggle"></i>
+  </header>
+  <div class="menu-bar">
+    <div class="menu">
+      <ul class="menu-links">
+        <li class="nav-link has-submenu">
+          <a href="#">
+            <i class="bx bx-home-alt icon"></i>
+            <span class="text nav-text">Dashboard</span>
+            <i class="bx bxs-chevron-down icon"></i>
+          </a>
+          <!-- Подменю -->
+          <ul class="submenu">
+            <li>
+              <a href="#"><span class="text">Project 1</span></a>
+            </li>
+            <li>
+              <a href="#"><span class="text">Project 2</span></a>
+            </li>
+            <li>
+              <a href="#"><span class="text">Project 3</span></a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-link">
+          <a href="#">
+            <i class="bx bx-bar-chart-alt-2 icon"></i>
+            <span class="text nav-text">Revenue</span>
+          </a>
+        </li>
+        <li class="nav-link">
+          <a href="#">
+            <i class="bx bx-bell icon"></i>
+            <span class="text nav-text">Notifications</span>
+          </a>
+        </li>
+        <li class="nav-link">
+          <a href="#">
+            <i class="bx bx-pie-chart-alt icon"></i>
+            <span class="text nav-text">Analytics</span>
+          </a>
+        </li>
+        <li class="nav-link">
+          <a href="#" id="likes">
+            <i class="bx bx-heart icon"></i>
+            <span class="text nav-text">Likes</span>
+          </a>
+        </li>
+        <li class="nav-link">
+          <a href="#">
+            <i class="bx bx-wallet icon"></i>
+            <span class="text nav-text">Wallets</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="bottom-content">
+      <li class="mode">
+        <div class="sun-moon">
+          <i class="bx bx-moon icon moon"></i>
+          <i class="bx bx-sun icon sun"></i>
+        </div>
+        <span class="mode-text text">Light mode</span>
+        <div class="toggle-switch">
+          <span class="switch"></span>
+        </div>
+      </li>
+    </div>
+  </div>
 </nav>
 
 {% endmacro %}

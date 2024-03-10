@@ -1,4 +1,13 @@
 <div>
-    <h1>About Us</h1>
-    <p>This is the content of the About Us page. It has been loaded dynamically without a full page refresh.</p>
+  <h1>About Us</h1>
+  <p>
+    This is the content of the About Us page. It has been loaded dynamically
+    without a full page refresh.
+  </p>
 </div>
+
+<ul>
+  {% for elem in myList %}
+  <li>{{ elem }}</li>
+  {% endfor %}
+</ul>
