@@ -1,48 +1,46 @@
-const body = document.querySelector("body"),
-  sidebar = body.querySelector("nav"),
-  toggle = body.querySelector(".toggle"),
-  modeSwitch = body.querySelector(".toggle-switch"),
-  modeText = body.querySelector(".mode-text");
-toggle.addEventListener("click", () => {
-  sidebar.classList.toggle("close");
-});
-modeSwitch.addEventListener("click", () => {
-  body.classList.toggle("dark");
+(function () {
+  document.addEventListener("DOMContentLoaded", function () {
+    const body = document.querySelector("body");
+    const sidebar = body.querySelector("nav");
+    const sidebarToggle = body.querySelector(".toggle");
+    const darkModeToggle = body.querySelector(".toggle-switch");
+    const darkModeText = body.querySelector(".mode-text");
+    isSidebarClosed = sidebar.classList.contains("close");
 
-  if (body.classList.contains("dark")) {
-    modeText.innerText = "Light mode";
-  } else {
-    modeText.innerText = "Dark mode";
-  }
-});
-document.addEventListener("DOMContentLoaded", function () {
-  // Получаем все элементы меню, которые имеют подменю
-  const hasSubmenu = document.querySelectorAll(".nav-link.has-submenu");
+    // Toggle sidebar
+    sidebarToggle.addEventListener("click", () => {
+      isSidebarClosed = sidebar.classList.toggle("close");
+    });
 
-  // Добавляем обработчик событий для каждого элемента меню с подменю
-  hasSubmenu.forEach((link) => {
-    link.addEventListener("click", function (event) {
-      // Предотвращаем стандартное поведение ссылки
-      event.preventDefault();
+    // Toggle dark mode
+    darkModeToggle.addEventListener("click", () => {
+      isDarkMode = body.classList.toggle("dark");
+      darkModeToggle.setAttribute("aria-pressed", isDarkMode);
+      darkModeText.innerText = isDarkMode ? "Light mode" : "Dark mode";
+    });
 
-      // Закрываем все открытые подменю
-      hasSubmenu.forEach((item) => {
-        if (item !== link) {
-          item.classList.remove("submenu-active");
+    // Delegate submenu toggle to the nav element
+
+    const nav = body.querySelector(".sidebar"); // Assuming your sidebar has a class of sidebar
+    nav.addEventListener("click", function (event) {
+      if (!isSidebarClosed) {
+        const inSubmenu = event.target.closest(".submenu");
+        if (inSubmenu) {
+          return;
         }
-      });
-
-      // Переключаем видимость подменю для текущего элемента меню
-      link.classList.toggle("submenu-active");
+        const hasSubmenu = event.target.closest(".nav-link.has-submenu");
+        if (hasSubmenu) {
+          event.preventDefault();
+          const navLinks = document.querySelectorAll(".nav-link.has-submenu");
+          navLinks.forEach((link) => {
+            if (link !== hasSubmenu) {
+              console.log(link);
+              link.classList.remove("submenu-active");
+            }
+          });
+          hasSubmenu.classList.toggle("submenu-active");
+        }
+      }
     });
   });
-});
-
-// Закрытие подменю при клике вне меню
-document.addEventListener("click", function (event) {
-  if (!event.target.closest(".sidebar")) {
-    hasSubmenu.forEach((link) => {
-      link.classList.remove("submenu-active");
-    });
-  }
-});
+})();

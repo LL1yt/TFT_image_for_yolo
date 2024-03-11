@@ -1,4 +1,5 @@
 from flask import Flask, render_template, jsonify
+import json
 
 app = Flask(__name__)
 
@@ -17,6 +18,15 @@ def get_data():
         "element3",
     ]
     return jsonify({"data": render_template("about.html", myList=myList)})
+
+
+@app.route("/get_config", methods=["POST"])
+def get_config():
+    with open("config.json", "r") as f:
+        config_data = json.load(f)
+    return jsonify(
+        {"config": render_template("config_template.html", config=config_data)}
+    )
 
 
 if __name__ == "__main__":
