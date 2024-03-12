@@ -17,6 +17,8 @@
   --text-color: #707070;
 
   /* ====== Transition ====== */
+  --tran-00: all 0s ease;
+  --tran-01: all 0.1s ease;
   --tran-02: all 0.2s ease;
   --tran-03: all 0.3s ease;
   --tran-04: all 0.4s ease;
@@ -43,6 +45,7 @@ body.dark {
   --toggle-color: #2ea3f2;
   --text-color: #2791ec;
   --i-color: #a7d6ff;
+  --menu-item-active: #223c5c;
   --submenu-li-height: 50px;
 }
 
@@ -306,25 +309,57 @@ body.dark .home .text {
   border-bottom-right-radius: 6px;
 }
 
-.sidebar.close .nav-link.has-submenu .submenu {
+.sidebar .menu-links .nav-link.has-submenu .submenu {
+  transition: var(--tran-05);
+  display: none;
+}
+.sidebar.close .menu-links .nav-link.has-submenu .submenu {
   position: absolute;
-  left: 100%;
-  margin-top: 0;
   opacity: 0;
   pointer-events: none;
+  display: flex;
+  flex-wrap: wrap;
+  left: 100%;
+  margin-top: 5px;
 }
-.sidebar.close .nav-link.has-submenu.submenu-active .submenu {
-  opacity: 1;
-  transition: var(--tran-05);
+.sidebar.close .menu-links .nav-link.menu-item-active a {
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  background-color: var(--menu-item-active);
+}
+.sidebar.close .menu-links .nav-link.menu-item-active .submenu.show a {
+  background-color: var(--submenu-color);
 }
 
-.sidebar.close .nav-link.has-submenu.submenu-active .submenu .text {
+.sidebar
+  .menu-links
+  .nav-link.menu-item-active
+  .submenu.show
+  a.menu-item-active {
+  background-color: var(--menu-item-active);
+}
+.sidebar .menu-links .nav-link.menu-item-active .submenu.show a:hover {
+  background-color: var(--primary-color);
+}
+.sidebar.close .menu-links .nav-link.has-submenu .submenu.show {
   opacity: 1;
-  transition: var(--tran-05);
+  cursor: pointer;
+  pointer-events: auto;
+  display: flex;
+  flex-wrap: wrap;
+  left: calc(100% - 14px);
+  margin-top: 100px;
+  width: 130px;
 }
 
-.sidebar.close .menu-links .nav-link.has-submenu.submenu-active .submenu li a {
-  padding-left: 10px;
+.sidebar.close .menu-links .nav-link.has-submenu .submenu.show a {
+  width: 130px;
+  padding-left: 30px;
+}
+.sidebar.close .menu-links .nav-link.has-submenu .submenu.show .text {
+  opacity: 1;
+  cursor: pointer;
+  pointer-events: auto;
 }
 
 .sidebar .menu-links .submenu {
@@ -336,29 +371,29 @@ body.dark .home .text {
 }
 
 /* Стили для активного подменю */
-.sidebar .menu-links .nav-link.has-submenu .submenu {
-  transition: var(--tran-05);
-  display: none;
-}
 
 .sidebar .menu-links .nav-link.has-submenu.submenu-active .submenu {
   display: block;
   border-top-left-radius: 0px;
   border-top-right-radius: 0px;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
 }
 
 .sidebar .menu-links .nav-link.has-submenu .submenu li {
   margin-top: 0px;
 }
-.sidebar .menu-links .nav-link.has-submenu .submenu li a {
-  background-color: transparent;
-}
 .sidebar .menu-links .nav-link.has-submenu.submenu-active .submenu li a {
   height: var(--submenu-li-height);
   padding-left: 70px;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
 }
 .sidebar .menu-links .nav-link.has-submenu.submenu-active li a:hover {
   background-color: var(--primary-color);
+}
+.sidebar .menu-links .nav-link a.menu-item-active {
+  background-color: var(--menu-item-active);
 }
 .sidebar .nav-link.has-submenu.submenu-active i.bxs-chevron-down {
   transform: rotate(-180deg);
